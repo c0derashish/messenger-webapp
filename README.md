@@ -69,7 +69,7 @@ Messenger-WebApp/
 ### Clone Repository
 
 ```bash
-git clone <https://github.com/c0derashish/messenger-webapp>
+git clone https://github.com/c0derashish/messenger-webapp
 cd Messenger-WebApp
 ```
 
