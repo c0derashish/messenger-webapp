@@ -1,207 +1,119 @@
-# Messenger-WebApp
+# Messenger Chat App
 
-Real-time messaging web application built with Flask, Socket.IO, SQLAlchemy, and MySQL. Messenger-WebApp supports live messaging, authentication, unread message tracking, dark mode, and responsive chat UI with real-time communication using WebSockets.
-
----
+A real-time web-based messenger application built with Flask, Socket.IO, SQLAlchemy, and SQLite.
 
 ## Features
 
-- Real-time messaging with Socket.IO
-- User authentication system
-- Secure password hashing
-- Unread message counter
-- Responsive chat interface
-- Dark mode support
-- Persistent chat history
-- MySQL database integration
-- Mobile-friendly UI
-- Live message synchronization
-- Docker and Google Cloud deployment support
-
----
+- User Registration & Login
+- Secure Password Hashing
+- Real-Time Messaging
+- Message Persistence
+- Unread Message Counter
+- Dark Mode Support
+- Responsive Mobile-Friendly UI
+- Session-Based Authentication
 
 ## Tech Stack
 
 ### Backend
-- Python
+
 - Flask
 - Flask-SocketIO
-- SQLAlchemy
-- MySQL
+- Flask-SQLAlchemy
+- SQLite
 - Eventlet
 
 ### Frontend
-- HTML
-- CSS
+
+- HTML5
+- CSS3
 - JavaScript
 - Socket.IO Client
 
----
+## Screenshots
 
-## Project Structure
+### Login Page
 
-```text
-Messenger-WebApp/
-│
-├── app.py
-├── requirements.txt
-├── Dockerfile
-├── app.yaml
-├── .gitignore
-│
-├── templates/
-│   ├── login.html
-│   ├── signup.html
-│   └── chat.html
-│
-├── static/
-│   ├── style.css
-│   ├── script.js
-│   └── images/
-│
-└── .env
-```
+![Login](screenshots/login.png)
 
----
+### Signup Page
+
+![Signup](screenshots/signup.png)
+
+### Chat Interface
+
+![Chat](screenshots/chat.png)
 
 ## Installation
 
-### Clone Repository
+Clone the repository
 
 ```bash
-git clone https://github.com/c0derashish/messenger-webapp
-cd Messenger-WebApp
+git clone https://github.com/yourusername/messenger-chat-app.git
+cd messenger-chat-app
 ```
 
----
-
-### Create Virtual Environment
-
-```bash
-python -m venv .venv
-```
-
-Activate environment:
-
-#### Windows
-```bash
-.venv\Scripts\activate
-```
-
-#### Linux / Mac
-```bash
-source .venv/bin/activate
-```
-
----
-
-## Install Dependencies
+Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
----
-
-## Environment Variables
-
-Create a `.env` file:
-
-```env
-SECRET_KEY=your_secret_key
-
-DB_USER=your_database_user
-DB_PASSWORD=your_database_password
-DB_HOST=your_database_host
-DB_NAME=your_database_name
-
-SQLALCHEMY_DATABASE_URI=mysql+pymysql://user:password@host:3306/dbname
-
-UPLOAD_FOLDER=static/uploads
-```
-
----
-
-## Run the Application
+Run the application
 
 ```bash
 python app.py
 ```
 
-Application will run on:
+Open
 
 ```text
 http://127.0.0.1:5000
 ```
 
----
+## Project Structure
 
-## Main Functionalities
+```text
+Messenger-App/
+│
+├── app.py
+├── requirements.txt
+├── templates/
+├── static/
+└── screenshots/
+```
 
-### Authentication
-- User signup
-- User login
-- Secure password hashing
-- Session-based authentication
+## Database
 
-### Real-Time Messaging
-- Instant message delivery
-- Live message updates
-- Socket.IO broadcasting
-- Persistent message storage
+SQLite is used for development.
 
-### Chat Features
-- Unread message tracking
-- Dynamic chat loading
-- User selection sidebar
-- Message timestamps
-- Auto scroll behavior
+Tables:
 
-### Responsive UI
-- Mobile-friendly layout
-- Dark mode toggle
-- Modern chat interface
-- Smooth transitions
+### User
 
----
+| Field    | Type    |
+|-----------|----------|
+| id        | Integer |
+| username  | String |
+| password  | String |
 
-## Deployment
+### Message
 
-This project supports:
-- Docker deployment
-- Google App Engine deployment
-
-Configuration files:
-- `Dockerfile`
-- `app.yaml`
-
----
+| Field      | Type |
+|------------|------|
+| sender     | String |
+| receiver   | String |
+| text       | String |
+| timestamp  | DateTime |
+| is_read    | Boolean |
 
 ## Future Improvements
 
-- Typing indicators
-- Media sharing
-- Voice messages
-- Group chats
-- Message reactions
-- End-to-end encryption
-- Online/offline presence
-- Push notifications
-
----
-
-## Screenshots
-
-Add screenshots here:
-
-![Login Page](screenshots/login.png)
-
-![Signup Page](screenshots/signup.png)
-
-![Chat Interface](screenshots/chat.png)
-
-
-
-
-
-
+- Online/Offline Status
+- Typing Indicators
+- Profile Pictures
+- Group Chats
+- Message Reactions
+- File Sharing
+- Voice Messages
+- MySQL/PostgreSQL Migration
